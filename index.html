@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="main.js"></script>
+
+
+
+    <title>NotFandango</title>
+</head>
+<body>
+
+    <div data-role="page" id="home">
+
+        <!-- header -->
+        <div data-role="header" data-theme='e'>
+
+            <div data-role="navbar" data-theme='e'>
+                <ul>
+                    <li><a href="#show" data-transition="slideup">Movie Watch list</a></li>
+                    <li><a href="#add" data-transition="slideup">Add Movie</a></li>
+                </ul>
+            </div>
+            <h2>Welcome to your watchlist</h2>
+        </div>
+
+        <!-- content -->
+        <div data-role="content" data-theme='a'>
+            You can keep track of movies here<br><br>
+        </div>
+
+
+
+        <!-- notes footer -->
+        <div data-role="footer" data-theme='b'>
+            <h3>Copyrigtht 2024</h3>
+        </div>
+
+    </div>   <!-- end of page -------------------------------------------->
+
+
+
+    <div data-role="page" id="show">
+
+        <!-- header -->
+        <div data-role="header" data-theme='e'>
+            <!-- /navbar -->
+            <div data-role="navbar" data-theme='e'>
+                <ul>
+                    <li><a href="#home" data-transition="pop">Home Page</a></li>
+                    <li><a href="#add" data-transition="pop">Add New Movie</a></li>
+                </ul>
+            </div>
+            <h2>Your List</h2>
+            <br><br>
+
+        </div>
+
+        <!-- content -->
+        <div data-role="content" data-theme='c'>
+            <ul id="myul" data-role="listview"></ul>
+        </div>
+
+        <!-- notes footer -->
+        <div data-role="footer" data-theme='b'>
+            <h3>Copyrigtht 2024</h3>
+        </div>
+
+    </div>   <!-- end of page ----------------------------------->
+
+
+    <div data-role="page" id="add">
+
+        <!-- header -->
+        <div data-role="header" data-theme='e'>
+            <div data-role="navbar" data-theme='e'>
+                <ul>
+                    <li><a href="#home" data-transition="flip">Home Page</a></li>
+                    <li><a href="#show" data-transition="flip">Your Watchlist</a></li>
+                </ul>
+            </div>
+            <h2>Add a Movie</h2>
+        </div>
+
+        <!-- content -->
+        <div data-role="content" data-theme='d'>
+
+            Release date <br />
+            <input type="text" value="" id="priorityInput" /><br />
+            Enter name<br>
+            <input type="text" value="" id="dataInput" />
+
+            <label for="select-type">Select a Type</label>
+            <select name="select-type" id="select-type">
+                <option value="Finished">Finished</option>
+                <option value="Planning">Plan to Watch</option>
+                <option value="Paused">Paused</option>
+                <option value="Rewatching">Rewatching</option>
+            </select>
+
+            <button id="buttonAdd">Add Movie</button>
+            <br>
+
+            <a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-gear ui-btn-icon-left ui-btn-a">What next?</a>
+            <div data-role="popup" id="popupMenu" data-theme="b">
+                <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                    <li data-role="list-divider">Choose an action</li>
+                    <li><a href="#home" data-transition="flow">Back to Home</a></li>
+                    <li><a href="#show" data-transition="fade">Show Movies</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- notes footer -->
+        <div data-role="footer" data-theme='b'>
+            <h3>Copyrigtht 2024</h3>
+        </div>
+
+    </div>  <!-- end of page --------------------------------------->
+
+</body>
+</html>
