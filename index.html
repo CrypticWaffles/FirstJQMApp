@@ -55,7 +55,7 @@
             <div data-role="navbar" data-theme='e'>
                 <ul>
                     <li><a href="#home" data-transition="pop">Home Page</a></li>
-                    <li><a href="#add" data-transition="pop">Add New Movie</a></li>
+                    <li><a href="#add" data-transition="pop">Add Movie</a></li>
                 </ul>
             </div>
             <h2>Your List</h2>
@@ -74,7 +74,6 @@
         </div>
 
     </div>   <!-- end of page ----------------------------------->
-
 
     <div data-role="page" id="add">
 
@@ -95,7 +94,9 @@
             Release date <br />
             <input type="text" value="" id="dateInput" /><br />
             Enter name<br>
-            <input type="text" value="" id="nameInput" />
+            <input type="text" value="" id="nameInput" /><br />
+            Enter runtime<br>
+            <input type="text" value="" id="runtimeInput" />
 
             <label for="select-status">Select a Status</label>
             <select name="select-status" id="select-status">
@@ -125,6 +126,36 @@
         </div>
 
     </div>  <!-- end of page --------------------------------------->
+
+    <div data-role="page" id="movieDetails">
+
+        <!-- header -->
+        <div data-role="header" data-theme='e'>
+
+            <div data-role="navbar" data-theme='e'>
+                <ul>
+                    <li><a href="#home" data-transition="flow">Back to Home</a></li>
+                    <li><a href="#show" data-transition="slideup">Your Watchlist</a></li>
+                    <li><a href="#add" data-transition="slideup">Add Movie</a></li>
+                </ul>
+            </div>
+            <h2 id="detailsHeader"></h2>
+        </div>
+
+        <!-- content -->
+        <div data-role="content" data-theme='a'>
+            <p id="detailsStatus"></p><br>
+            <p id="detailsDate"></p><br>
+        </div>
+
+
+
+        <!-- notes footer -->
+        <div data-role="footer" data-theme='b'>
+            <h3>Copyright 2024</h3>
+        </div>
+
+    </div>
 
 </body>
 </html>
