@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#cat1 {
+  display: block; }
+#cat2 {
+  display: none; }
+.catMove {
+  position: absolute;  
+  display: block; }
