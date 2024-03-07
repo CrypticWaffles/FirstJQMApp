@@ -19,8 +19,6 @@ serverArray.push ( new MovieObject("Dune: Part Two", "Planning", "3/1/24", "165 
 serverArray.push ( new MovieObject("G Minus One", "Watched", "12/1/23", "125 minutes", "https://waxworkrecords.com/cdn/shop/files/Godzilla-Minus-One_Front-Cover_740x.jpg?v=1705441477")  );
 serverArray.push ( new MovieObject("The Boy and the Heron", "Watched", "12/8/23", "124 minutes", "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/192/2023/10/06110031/zbMRm6P6wPe9SQ6qJ7ZTAvCMS6e-683x1024.jpg")  );
 
-console.log(serverArray);
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.sendFile('index.html');
@@ -30,5 +28,15 @@ router.get('/', function(req, res, next) {
 router.get('/getAllMovies', function(req, res) {
   res.status(200).json(serverArray);
 });
+
+/*Add new Movies */
+router.post('/AddMovie', function(req, res) {
+  const newMovie = req.body;
+  serverArray.push(newMovie);
+  res.status(200).json(newMovie);
+});
+
+/* Delete movie */
+
 
 module.exports = router;

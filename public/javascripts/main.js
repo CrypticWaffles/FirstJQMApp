@@ -23,11 +23,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     //each time a new movie is added
     document.getElementById("buttonAdd").addEventListener("click", function () {
-        //update the MovieArray by pushing a new movie object with the following parameters
-        MovieArray.push ( new MovieObject(document.getElementById("nameInput").value, selectedStatus,
+        //create a new movie object with the following parameters
+        let newMovie = ( new MovieObject(document.getElementById("nameInput").value, selectedStatus,
         document.getElementById("dateInput").value, document.getElementById("runtimeInput").value, document.getElementById("imgInput").value ) );
         //Grabs the name, watch status, and release date, respectively
-        
+        //Add new Movie object to serverArray
+        $.ajax({
+            url : "/AddMovie",
+            type: "POST",
+            data: JSON.stringify(newMovie),
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                console.log(result);
+                document.location.href = "index.html#show"
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                alert("Server could not add Movie: " + newMovie.name);
+                alert(textStatus + " " + errorThrown);
+            }
+        });
+
         document.getElementById("nameInput").value = ""; //reset the Add a Movie textbox
         document.getElementById("dateInput").value = ""; //reset the Add a Movie textbox
         document.getElementById("runtimeInput").value = ""; //reset the Add a Movie textbox
