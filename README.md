@@ -1,2 +1,3 @@
-Group work project for DEV 209
-Miles G & Asher P
+Group work project for DEV 209 class.
+- Using Jquery Mobile & EJS
+By Miles G & Asher P
